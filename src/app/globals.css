@@ -24,6 +24,13 @@
 :root {
   --background: #fefefe;
   --foreground: #171717;
+  --cosmic-bg: #0A0E1A;
+  --cosmic-bg-light: #0F1628;
+  --cosmic-text: #F5F0E8;
+  --cosmic-text-dim: #7A82A0;
+  --cosmic-text-mid: #A0A8C0;
+  --cosmic-glow: #1E2A4A;
+  --cosmic-border: #1A2040;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -50,4 +57,24 @@ body {
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+/* Star twinkle animation for CSS-based stars */
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.8; }
+}
+
+.animate-twinkle {
+  animation: star-twinkle 3s ease-in-out infinite;
+}
+
+/* Cosmic pulse animation */
+@keyframes cosmic-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.3); opacity: 0.8; }
+}
+
+.animate-cosmic-pulse {
+  animation: cosmic-pulse 2s ease-in-out infinite;
 }
