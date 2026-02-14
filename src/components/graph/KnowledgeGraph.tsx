@@ -52,7 +52,14 @@ export function KnowledgeGraph({
   const hoveredNodeRef = useRef<string | null>(null);
   const [dimensions, setDimensions] = useState({ width: width || 800, height });
 
-  // Responsive sizing
+  // Sync dimensions when explicit props change
+  useEffect(() => {
+    if (width !== undefined) {
+      setDimensions({ width, height });
+    }
+  }, [width, height]);
+
+  // Responsive sizing (fallback when no explicit width)
   useEffect(() => {
     if (!containerRef.current || width) return;
     const observer = new ResizeObserver((entries) => {
