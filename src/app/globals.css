@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --font-amiri: "Amiri", serif;
+  --font-nunito: "Nunito", sans-serif;
+
+  --color-unit-a: #E74C3C;
+  --color-unit-b: #27AE60;
+  --color-unit-c: #3498DB;
+  --color-unit-d: #8B4513;
+  --color-unit-e: #F1C40F;
+  --color-unit-f: #9B59B6;
+  --color-unit-g: #E67E22;
+  --color-unit-h: #1ABC9C;
+  --color-unit-i: #E91E63;
+  --color-unit-j: #2196F3;
+  --color-unit-k: #FF9800;
+  --color-unit-l: #4CAF50;
+  --color-unit-m: #C2185B;
+  --color-unit-n: #00BCD4;
+  --color-unit-o: #795548;
+}
+
+:root {
+  --background: #fefefe;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-nunito), Arial, Helvetica, sans-serif;
+}
+
+.arabic-text {
+  font-family: var(--font-amiri), serif;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+/* Smooth transitions for kid-friendly feel */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
